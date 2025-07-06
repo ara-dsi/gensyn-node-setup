@@ -78,9 +78,9 @@ git clone https://github.com/gensyn-ai/rl-swarm/
 2. Navigate to /workspace/rl-swarm/
 3. Drag & drop your swarm.pem file from your local machine into that folder
 
-### If you are just running node, then go to step 5 and in the last step you will be told how to backup swarm.pem
+### If you are just running node, then go to step 6 and in the last step you will be told how to backup swarm.pem
 
-## Step 5: Run the Node
+## Step 6: Run the Node
 ### Start a new screen session
 ```bash
 screen -S swarm
