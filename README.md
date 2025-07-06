@@ -128,10 +128,10 @@ Enter the name of the model you want to use in huggingface repo/name format, or 
 - dnotitia/Smoothie-Qwen3-1.7B
 - Gensyn/Qwen2.5-1.5B-Instruct
 
-### Check Node Status
+# Check Node Status
 Visit : https://dashboard.gensyn.ai/ login with your email.
 
-### Backup swarm.pem (if you are new to running node): 
+# Backup swarm.pem (if you are new to running node): 
 1. Open Jupyter Lab
 2. Go to /workspace/rl-swarm/
 3. Right-click on swarm.pem → Download
