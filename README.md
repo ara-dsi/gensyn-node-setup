@@ -2,6 +2,8 @@
 
 This guide explains how to run a [Gensyn RL-Swarm](https://github.com/gensyn-ai/rl-swarm)
 
+<img src="1.png" width="700"/>
+
 ## REQUIREMENTS :
 1. Quickpod : For rent GPU [Quickpod](https://console.quickpod.io/)
    ### Supported Hardware : 
@@ -35,28 +37,28 @@ This guide explains how to run a [Gensyn RL-Swarm](https://github.com/gensyn-ai/
 
 ## Step 3: Install Required Dependencies
 
-### Update system & install basic tools
+#### Update system & install basic tools
 ```bash
 apt update && apt upgrade -y
 apt install screen -y
 ```
-### Install Python & virtual environment support
+#### Install Python & virtual environment support
 ```bash
 apt install python3 python3-pip python3-venv python3-dev -y
 ```
-### Install Node.js v22
+#### Install Node.js v22
 ```bash
 curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
 apt install -y nodejs
 ```
-### Install Yarn
+#### Install Yarn
 ```bash
 curl -o- -L https://yarnpkg.com/install.sh | bash
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 source ~/.bashrc
 ```
 ## Step 4: Install & Configure Ngrok
-###  Install Ngrok
+####  Install Ngrok
 ```bash
 curl -sSL https://ngrok-agent.s3.amazonaws.com/ngrok.asc \
   | tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null \
@@ -65,7 +67,7 @@ curl -sSL https://ngrok-agent.s3.amazonaws.com/ngrok.asc \
   && apt update \
   && apt install ngrok
 ```
-### Add your Ngrok Authtoken
+#### Add your Ngrok Authtoken
 ```bash
 ngrok config add-authtoken YOUR-TOKEN
 ```
@@ -73,35 +75,41 @@ ngrok config add-authtoken YOUR-TOKEN
 ```bash
 git clone https://github.com/gensyn-ai/rl-swarm/
 ```
-### Recover swarm.pem (if you have ever run node): 
+#### Recover swarm.pem (if you have ever run node): 
+<img src="2.png" width="200"/>
+
 1. Open Jupyter Lab (QuickPod > Connect > Jupyter Lab)
 2. Navigate to /workspace/rl-swarm/
 3. Drag & drop your swarm.pem file from your local machine into that folder
 
-### If you are just running node, then go to step 6 and in the last step you will be told how to backup swarm.pem
+#### If you are just running node, then go to step 6 and in the last step you will be told how to backup swarm.pem
 
 ## Step 6: Run the Node
-### Start a new screen session
+#### Start a new screen session
 ```bash
 screen -S swarm
 ```
 ```bash
 cd rl-swarm
 ```
-### Launch the node
+#### Launch the node
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 ./run_rl_swarm.sh
 ```
-### If successful then you will see "Waiting for modal userData.json to be created..."
-You can minimize screen : ctrl A+D
+#### If successful then you will see "Waiting for modal userData.json to be created..."
+<img src="3.png" width="700"/>
+
+You can minimize screen : `ctrl` `A`+`D`
 
 ## Step 7: Login via Ngrok in Browser
 ```bash
 ngrok http 3000
 ```
-### Copy the Ngrok forwarding link
+#### Copy the Ngrok forwarding link
+<img src="4.png" width="700"/>
+
 Example output:
 ```bash
 Forwarding https://abc123.ngrok.io -> http://localhost:3000
@@ -112,13 +120,17 @@ Open the HTTPS link in your local browser. Then:
 3. Check your email for the OTP code
 4. You're now logged in
 
-### Return to your running node screen
+#### Return to your running node screen
 ```bash
 screen -r swarm
 ```
 Wait for installation
 
-### Answer prompt :
+<img src="6.png" width="560"/>
+
+#### Answer prompt :
+<img src="5.png" width="700"/>
+
 Would you like to push models you train in the RL swarm to the Hugging Face Hub? [y/N] >>> Type N
 
 Enter the name of the model you want to use in huggingface repo/name format, or press [Enter] to use the default model. >>> press Enter to use the default or you can choose one of the following models:
@@ -132,6 +144,8 @@ Enter the name of the model you want to use in huggingface repo/name format, or 
 Visit : https://dashboard.gensyn.ai/ login with your email.
 
 # Backup swarm.pem (if you are new to running node): 
+<img src="2.png" width="200"/>
+
 1. Open Jupyter Lab
 2. Go to /workspace/rl-swarm/
 3. Right-click on swarm.pem → Download
