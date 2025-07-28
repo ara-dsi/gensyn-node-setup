@@ -185,3 +185,9 @@ This will update your local copy of the RL-Swarm repository to the latest versio
 5. Relaunch the node
 
 Follow step 6 in the previous tutorial to run the node.
+
+# How to Setup GSwarm and Get SWARM Role on Discord
+
+<img src="10.png" width="400"/>
+
+[GSwarm Setup & SWARM Role Access Guide](https://github.com/ara-dsi/gensyn-node-setup/blob/main/README2.md#gswarm-setup--swarm-role-access-guide)
