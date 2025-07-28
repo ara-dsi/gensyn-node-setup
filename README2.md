@@ -4,29 +4,29 @@ This guide will help you install GSwarm, link your Telegram and Discord accounts
 
 ## Install Go
 
-### Download Go 
+#### Download Go 
 ```bash
 wget https://go.dev/dl/go1.22.3.linux-amd64.tar.gz
 ```
-### Extract and install to /usr/local
+#### Extract and install to /usr/local
 ```bash
 tar -C /usr/local -xzf go1.22.3.linux-amd64.tar.gz
 ```
-### Add Go to PATH
+#### Add Go to PATH
 ```bash
 echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
 source ~/.bashrc
 ```
-### Verify installation
+#### Verify installation
 ```bash
 go version
 ```
 ## Install GSwarm
-### Install GSwarm using Go
+#### Install GSwarm using Go
 ```bash
 go install github.com/Deep-Commit/gswarm/cmd/gswarm@latest
 ```
-### Check version
+#### Check version
 ```bash
 gswarm --version
 ```
@@ -55,6 +55,10 @@ Example :
  ```bash
     https://api.telegram.org/botYOUR_BOT_TOKEN/getUpdates
  ```    
+Example :
+ ```bash
+    https://api.telegram.org/bot1234567890:ABCdefGHIjklMNOpqrsTUVwxyz/getUpdates
+ ```
 Example response:
  ```bash
 {
