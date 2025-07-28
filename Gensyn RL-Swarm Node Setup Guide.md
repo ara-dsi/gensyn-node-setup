@@ -21,7 +21,7 @@ This guide explains how to run a [Gensyn RL-Swarm](https://github.com/gensyn-ai/
 
 1. Log in to QuickPod → go to **Templates**
 2. Search for: `cuda`
-3. Select: **Jupyter Lab CUDA**
+3. Select: **Jupyter Lab CUDA 12.4 or newer version**
 4. Choose your desired GPU (e.g., `RTX 3090`)
 5. Click **Create Pod**
 6. Increase **Disk Space to 50 GB**
