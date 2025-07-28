@@ -21,7 +21,7 @@ This guide explains how to run a [Gensyn RL-Swarm](https://github.com/gensyn-ai/
 
 1. Log in to QuickPod → go to **Templates**
 2. Search for: `cuda`
-3. Select: **Jupyter Lab CUDA 12.4 / 12.6**
+3. Select: **Jupyter Lab CUDA**
 4. Choose your desired GPU (e.g., `RTX 3090`)
 5. Click **Create Pod**
 6. Increase **Disk Space to 50 GB**
@@ -95,9 +95,17 @@ cd rl-swarm
 #### Launch the node
 ```bash
 python3 -m venv .venv
+```
+```bash
+. .venv/bin/activate
+
+## if an error appears, use this :
 source .venv/bin/activate
+```
+```bash
 ./run_rl_swarm.sh
 ```
+
 #### If successful then you will see "Waiting for modal userData.json to be created..."
 <img src="3.png" width="700"/>
 
@@ -149,3 +157,31 @@ Visit : https://dashboard.gensyn.ai/ login with your email.
 1. Open Jupyter Lab
 2. Go to /workspace/rl-swarm/
 3. Right-click on swarm.pem → Download
+
+# How to Update Your RL-Swarm Node
+If you've previously set up your node and want to update it to the latest version, follow these steps:
+
+1. Reconnect to your screen session
+```bash
+screen -r swarm
+```
+
+2. Stop the running node
+`Ctrl` + `C`
+
+This will stop the currently running RL-Swarm process.
+
+3. Go to the rl-swarm directory
+```bash
+cd rl-swarm
+```
+
+4. Pull the latest changes from GitHub
+```bash
+git pull
+```
+This will update your local copy of the RL-Swarm repository to the latest version available on GitHub.
+
+5. Relaunch the node
+
+Follow step 6 in the previous tutorial to run the node.
